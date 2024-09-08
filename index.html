@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Day 1</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h2>Muazam Shafiq</h2>
+        <p>I am Frontend web Developer and i am student of MERN Stack Development</p>
+        <button onclick="showParagraph()">MERN INFO</button>
+        <p id="newParagraph">The MERN Stack is a full-stack JavaScript framework consisting of <i>MongoDB</i> ,<i>  Express.js</i> ,<i>  React.js</i> ,<i> and Node.js</i>. It enables developers to build dynamic, scalable web applications using a single language, JavaScript, across both server-side and client-side development.</p>
+                     
+    </div>
+
+    <div class="container2">
+        <h2>Age Verification</h2>
+        <input type="number" id="ageInput" placeholder="Enter your age">
+        <button onclick="verifyAge()">Login</button>
+      <div id="calculator" style="display: none;">
+        <h3>Calculator</h3>
+        <input type="number" id="num1" placeholder="Enter first number">
+        <input type="number" id="num2" placeholder="Enter second number">
+        <button onclick="calculate()">Calculate</button>
+        <p class="output" id="result"></p>
+      </div>
+  
+      <p id="message" class="output"></p>
+    </div>
+    
+<script>
+    function showParagraph() {
+      document.getElementById("newParagraph").style.display = "block";
+    }
+   //Project 2
+    function verifyAge() {
+      const age = document.getElementById("ageInput").value;
+      const message = document.getElementById("message");
+      const calculator = document.getElementById("calculator");
+
+      if (age >= 18) {
+        message.textContent = "Access granted. Welcome!";
+        calculator.style.display = "block";
+      } else {
+        message.textContent = "Access denied. You must be 18 or older to use the calculator.";
+        calculator.style.display = "none";
+      }
+    }
+
+    function calculate() {
+      const num1 = parseFloat(document.getElementById("num1").value);
+      const num2 = parseFloat(document.getElementById("num2").value);
+      const result = document.getElementById("result");
+
+      if (!isNaN(num1) && !isNaN(num2)) {
+        result.textContent = `The sum is: ${num1 + num2}`;
+      } else {
+        result.textContent = "Please enter valid numbers.";
+      }
+    }
+</script>
+
+</body>
+</html>
